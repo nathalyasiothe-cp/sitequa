@@ -44,17 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function validarCPF(cpf) {
-    cpf = cpf.replace(/\D/g, '');
-    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
-    let s = 0, r;
-    for (let i = 1; i <= 9; i++) s += parseInt(cpf[i-1]) * (11-i);
-    r = (s * 10) % 11; if (r === 10 || r === 11) r = 0;
-    if (r !== parseInt(cpf[9])) return false;
-    s = 0;
-    for (let i = 1; i <= 10; i++) s += parseInt(cpf[i-1]) * (12-i);
-    r = (s * 10) % 11; if (r === 10 || r === 11) r = 0;
-    return r === parseInt(cpf[10]);
-  }
+cpf = cpf.replace(/\D/g, ''); // Remove pontos e traço
+return cpf.length === 11;
+}
 
   function validarData(data) {
     var p = data.split('/');
