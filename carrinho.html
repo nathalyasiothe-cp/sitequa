@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Chafé Clube</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2 family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-dark mb-4">
+      <div class="container-fluid justify-content-center">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="img_chafe/img_simbolo_rodape.jpeg" alt="Logo" width="40" height="38" class="me-2">
+          Chafé Clube
+        </a>
+      </div>
+    </nav>
+
+    <div class="container my-5 bg-white p-4 p-md-5 rounded shadow-sm">
+      
+      <div class="d-flex justify-content-end mb-4">
+        <button class="btn btn-secondary text-uppercase fw-bold px-4" style="background-color: #7a7a7a; border: none;">Finalizar Compra 🔒</button>
+      </div>
+
+      <hr>
+
+      <div class="row align-items-center my-4 text-muted">
+        <div class="col-md-2 text-center">
+          <img src="img_chafe/img_simbolo_rodape.jpeg" class="img-fluid rounded" style="max-width: 80px;" alt="Combo">
+        </div>
+        <div class="col-md-4 mt-3 mt-md-0">
+          <h5 class="fw-bold text-dark m-0" id="cart-nome-plano">Carregando plano...</h5>
+          <small class="text-muted" id="cart-freq-plano">Frequência: -</small>
+        </div>
+        <div class="col-md-2 mt-3 mt-md-0 text-md-center">
+          <span class="small d-md-none d-block fw-bold text-uppercase">Preço</span>
+          <span id="cart-preco-unitario">R$ 0,00</span>
+        </div>
+        <div class="col-md-2 mt-3 mt-md-0 text-md-center">
+          <span class="small d-md-none d-block fw-bold text-uppercase">Quantidade</span>
+          <input type="number" class="form-control mx-auto text-center" value="1" min="1" style="max-width: 60px;" readonly>
+        </div>
+        <div class="col-md-2 mt-3 mt-md-0 text-md-end text-center">
+          <button class="btn btn-outline-danger btn-sm"><span class="fs-6">🗑️</span></button>
+        </div>
+      </div>
+
+      <hr class="my-4">
+
+      <div class="row justify-content-end text-end">
+        <div class="col-md-4">
+          <div class="d-flex justify-content-between my-2">
+            <span class="text-muted">Subtotal</span>
+            <span class="fw-bold text-dark" id="cart-subtotal">R$ 0,00</span>
+          </div>
+          <div class="d-flex justify-content-between my-2">
+            <span class="text-muted">Desconto</span>
+            <span class="fw-bold text-success">R$ 0,00</span>
+          </div>
+          <div class="d-flex justify-content-between my-2">
+            <span class="text-muted">Frete</span>
+            <span class="text-primary small" style="cursor:pointer; text-decoration: underline;">Ver opções de frete</span>
+          </div>
+          <div class="d-flex justify-content-between my-3 pt-3 border-top">
+            <span class="h4 fw-bold text-muted">Total</span>
+            <span class="h3 fw-bold text-dark" id="cart-total">R$ 0,00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-5 gap-3">
+        <a href="index.html" class="btn btn-outline-secondary text-uppercase fw-medium px-4" style="border-radius: 4px;">← Continuar comprando</a>
+        <button class="btn btn-secondary text-uppercase fw-bold px-5 py-2" style="background-color: #7a7a7a; border: none;">Finalizar Compra 🔒</button>
+      </div>
+
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Recupera o que foi salvo lá no formulário de cadastro
+        const plano = localStorage.getItem('planoEscolhido');
+        const freq = localStorage.getItem('frequenciaEscolhida');
+
+        // Mapeamento de nomes e preços baseado na escolha
+        let nomeProduto = "Combo Customizado";
+        let preco = "0,00";
+
+        if (plano === 'cha') {
+          nomeProduto = "Combo Chá 🍃";
+          preco = "129,00"; // Defina o valor real que quiser
+        } else if (plano === 'cafe') {
+          nomeProduto = "Combo Café ☕";
+          preco = "159,00"; // Defina o valor real que quiser
+        } else if (plano === 'ambos') {
+          nomeProduto = "Combo Café + Chá 🌟";
+          preco = "229,00"; // Valor aproximado ao da imagem do seu exemplo
+        }
+
+        // Aplica os textos dinamicamente na tela do carrinho
+        if(plano) {
+          document.getElementById('cart-nome-plano').innerText = nomeProduto;
+          document.getElementById('cart-freq-plano').innerText = "Frequência de entrega: " + (freq ? freq.toUpperCase() : "Mensal");
+          document.getElementById('cart-preco-unitario').innerText = "R$ " + preco;
+          document.getElementById('cart-subtotal').innerText = "R$ " + preco;
+          document.getElementById('cart-total').innerText = "R$ " + preco;
+        } else {
+          // Fallback caso entrem na página direto sem cadastrar antes
+          document.getElementById('cart-nome-plano').innerText = "Nenhum plano selecionado";
+        }
+      });
+    </script>
+  </body>
+</html>
