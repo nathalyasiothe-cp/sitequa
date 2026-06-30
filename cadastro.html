@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Chafé Clube</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="stl.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=400;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+
+   <nav class="navbar sticky-top navbar-dark bg-dark py-4" id="inicio">
+  <div class="container-fluid">
+    <a class="navbar-brand position-absolute start-50 translate-middle-x m-0 d-flex align-items-center" href="index.html">
+      <img src="img_chafe/img_simbolo_rodape.jpeg" alt="Logo" width="40" height="38" class="d-inline-block align-text-top me-2">
+      Chafé Clube
+    </a>
+  </div>
+</nav>
+
+    <section class="py-5 bg-custom-light" id="cadastro">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-center my-4">
+          <hr class="w-25 my-0">
+          <h2 class="mx-3 fw-bold title-accent text-uppercase">Cadastre-se</h2>
+          <hr class="w-25 my-0">
+        </div>
+        <p class="text-center text-muted mb-5">Crie sua conta e comece sua assinatura hoje mesmo</p>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8 bg-white p-4 p-md-5 rounded shadow-sm">
+            
+            <form id="form-cadastro" novalidate class="row g-3">
+              <div class="col-md-6">
+                <label for="nome" class="form-label fw-medium text-muted small">Nome completo <span class="text-danger">*</span></label>
+                <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome completo">
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label fw-medium text-muted small">E-mail <span class="text-danger">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="seu@email.com">
+              </div>
+              <div class="col-md-4">
+                <label for="cpf" class="form-label fw-medium text-muted small">CPF <span class="text-danger">*</span></label>
+                <input type="text" id="cpf" name="cpf" class="form-control" placeholder="000.000.000-00" maxlength="14">
+              </div>
+              <div class="col-md-4">
+                <label for="telefone" class="form-label fw-medium text-muted small">Telefone / WhatsApp <span class="text-danger">*</span></label>
+                <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(00) 00000-0000" maxlength="15">
+              </div>
+              <div class="col-md-4">
+                <label for="nascimento" class="form-label fw-medium text-muted small">Data de nascimento <span class="text-danger">*</span></label>
+                <input type="text" id="nascimento" name="nascimento" class="form-control" placeholder="dd/mm/aaaa" maxlength="10">
+              </div>
+              <div class="col-md-6">
+                <label for="plano" class="form-label fw-medium text-muted small">Plano desejado <span class="text-danger">*</span></label>
+                <select id="plano" name="plano" class="form-select">
+                  <option value="">-- Selecione um plano --</option>
+                  <option value="cafe">Combo Café ☕</option>
+                  <option value="cha">Combo Chá 🍃</option>
+                  <option value="ambos">Combo Café + Chá 🌟</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-medium text-muted small d-block mb-2">Frequência de entrega <span class="text-danger">*</span></label>
+                <div class="d-flex flex-wrap gap-3 mt-1">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="frequencia" id="freq-mensal" value="mensal">
+                    <label class="form-check-label small" for="freq-mensal">Mensal</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="frequencia" id="freq-bimestral" value="bimestral">
+                    <label class="form-check-label small" for="freq-bimestral">Bimestral</label>
+                  </div>
+                </div>
+         </div>
+              
+              
+              <div class="col-md-6">
+                <label for="senha" class="form-label fw-medium text-muted small">Senha <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <input type="password" id="senha" name="senha" class="form-control" placeholder="Mínimo 8 caracteres">
+                  <button class="btn btn-outline-secondary" type="button" id="btn-toggle-senha">👁</button>
+                </div>
+                <div class="progress mt-2" style="height: 5px;">
+                  <div id="barra-forca" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                </div>
+                <small id="label-forca" class="text-muted d-block mt-1" style="font-size: 11px;"></small>
+              </div>
+              
+              <div class="col-md-6">
+                <label for="confirma-senha" class="form-label fw-medium text-muted small">Confirmar senha <span class="text-danger">*</span></label>
+                <input type="password" id="confirma-senha" name="confirma-senha" class="form-control" placeholder="Repita a senha">
+              </div>
+
+              <div class="col-12 mt-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="termos">
+                  <label class="form-check-label small text-muted" for="termos">
+                    Aceito os Termos de Uso e Política de Privacidade. <span class="text-danger">*</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn btn-lg w-100 text-white" style="background-color: #d17a5a;">Finalizar minha assinatura</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal fade" id="modalErro" tabindex="-1" aria-labelledby="modalErroLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title fw-bold" id="modalErroLabel">Atenção — verifique os dados</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p id="modalErroMensagem" class="my-2"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-danger" data-bs-dismiss="modal">Entendi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalSucesso" tabindex="-1" aria-labelledby="modalSucessoLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title fw-bold" id="modalSucessoLabel">Bem-vindo ao Chafé Club! ☕</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="my-2 fw-semibold">Seu cadastro foi realizado com sucesso!</p>
+            <p class="text-muted small">Em breve você receberá um e-mail de confirmação.</p>
+          </div>
+          <div class="modal-footer">
+           <a href="carrinho.html" id="btn-sucesso-inicio" class="btn btn-sm btn-success">🎉 Ir para o Checkout / Carrinho</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Confirmado - Chafé Clube</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-dark mb-5">
+      <div class="container-fluid justify-content-center">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="img_chafe/img_simbolo_rodape.jpeg" alt="Logo" width="40" height="38" class="me-2">
+          Chafé Clube
+        </a>
+      </div>
+    </nav>
+
+    <div class="container my-5 text-center">
+      <div class="row justify-content-center">
+        <div class="col-md-7 bg-white p-5 rounded shadow-sm">
+          
+          <div class="display-1 mb-3" style="color: #D47A5D;">🎉</div>
+          
+          <span class="text-uppercase small fw-bold tracking-wide d-block mb-2" style="color: #D47A5D; letter-spacing: 2px;">Assinatura Concluída</span>
+          <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 2.4rem;">Seu pedido foi confirmado!</h2>
+          
+          <p class="text-muted small px-md-4 mb-4">
+            Parabéns! Você agora faz parte do **Chafé Clube**. Preparamos sua caixinha com base nas suas preferências e ela será enviada com muito carinho.
+          </p>
+
+          <div class="p-3 my-4 mx-auto text-start bg-light rounded border" style="max-width: 450px; font-size: 0.9rem;">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Número do pedido:</span>
+              <strong class="text-dark">#CH-<span id="numero-pedido">8472</span></strong>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Plano assinado:</span>
+              <strong class="text-dark" id="confirma-plano">Carregando...</strong>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="text-muted">Status do pagamento:</span>
+              <span class="badge bg-success pt-1">Aprovado</span>
+            </div>
+          </div>
+
+          <p class="small text-muted mb-5">
+            Enviamos um e-mail com o código de rastreio e o resumo do seu contrato de assinatura.
+          </p>
+
+          <a href="index.html" class="btn text-uppercase fw-bold text-white px-5 py-2" style="background-color: #D47A5D; border: none; border-radius: 0px; font-size: 0.85rem; letter-spacing: 1px;">
+            Voltar para a Página Inicial
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Gerador de número de pedido aleatório para ficar dinâmico e realista
+        const numAleatorio = Math.floor(1000 + Math.random() * 9000);
+        document.getElementById('numero-pedido').innerText = numAleatorio;
+
+        // Pega o plano que o usuário preencheu no cadastro
+        const plano = localStorage.getItem('planoEscolhido');
+        let nomeVisual = "Combo Customizado";
+
+        if (plano === 'cha') nomeVisual = "Combo Chá 🍃";
+        else if (plano === 'cafe') nomeVisual = "Combo Café ☕";
+        else if (plano === 'ambos') nomeVisual = "Combo Café + Chá 🌟";
+
+        document.getElementById('confirma-plano').innerText = nomeVisual;
+      });
+    </script>
+  </body>
+</html>

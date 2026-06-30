@@ -1,0 +1,196 @@
+
+#navbarToggleExternalContent {
+    position: fixed;
+    top: 56px; 
+    left: 0;
+    right: 0;
+    z-index: 1040;
+} 
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; 
+    letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.card-principal {
+    margin-top: 0 !important;
+    position: relative;
+    width: 100%;
+    border-radius: 0 !important; 
+}
+
+/* Ajusta a imagem dentro do card */
+.card-principal .card-img {
+    height: 100vh !important; 
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Alinha o texto por cima da imagem */
+.card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start; 
+    padding-left: 10% !important; 
+    background: rgba(0, 0, 0, 0.4); 
+}
+.img-combo {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Remove o sublinhado e a cor azul padrão dos links */
+.link-combo {
+    text-decoration: none !important;
+    color: inherit !important; 
+    display: block; 
+}
+
+.link-combo:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+/* BANNER DE BENEFÍCIOS */
+.banner-beneficios {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url('img_chafe/img_fundoo.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+    min-height: 450px; 
+    padding: 80px 0;
+}
+
+/* AJUSTE BANNER */
+
+.label-beneficios {
+    color: #D47A5D !important; 
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+}
+
+.titulo-banner {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #ffffff !important; 
+}
+
+.max-width-p {
+    max-width: 480px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #f0f0f0 !important; 
+}
+
+/* Ajuste do Botão */
+.btn-banner-dourado {
+    background-color: #D47A5D !important; 
+    border: none;
+    border-radius: 0px; 
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-banner-dourado:hover {
+    background-color: #b56347 !important; 
+}
+
+/* Estilo para a seção "Escolha seu Plano" */
+
+/* Importando uma fonte Serifada elegante  */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+
+.label-assinatura {
+    color: #D47A5D; 
+    letter-spacing: 3px; /* Espaçamento entre as letras */
+    font-size: 0.75rem;
+}
+
+.titulo-plano-serif {
+    font-family: 'Playfair Display', serif; 
+    font-size: 2.8rem;
+    color: #fdf8f1;
+    font-weight: 400;
+}
+
+.bg-custom-light {
+    background-color: #fdf8f1; 
+}
+
+.max-width-text {
+    max-width: 600px;
+}
+
+/* EFEITO DE MOVIMENTO NOS CARDS DOS COMBOS (HOVER EFFECT) */
+
+/* card para a animação */
+.img-combo, .card, [class*="combo"] { 
+    /* Nota: Usei seletores genéricos, mas caso seus cards tenham uma classe específica, como .card, use ela */
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* sombra quando o mouse passa por cima (Hover) */
+.img-combo:hover, .card:hover, [class*="combo"]:hover {
+    transform: translateY(-8px) !important; /* Move o card 8 pixels para cima */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important; /* Aumenta a sombra para dar efeito de profundidade */
+    cursor: pointer; /* Transforma a seta do mouse na mãozinha de clique */
+}
+
+
+
+
+
+/*PALETA DE CORES*/
+
+body {
+    background-color: #F9F6F0 !important; 
+    color: #1A1310 !important; /* Texto em marrom curtido quase preto */
+}
+
+section, .bg-light, .bg-white {
+    background-color: transparent !important; 
+}
+
+.bg-custom-light {
+    background-color: #F0EAE1 !important; /* Bege um tom acima para criar blocos */
+}
+
+.title-accent, h1, h2, h3, h4, h5 {
+    color: #1A1310 !important;
+}
+
+.text-custom {
+    color: #D47A5D !important;
+}
+
+/* Estilo do Botão */
+.btn-custom {
+    background-color: #D47A5D !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+}
+
+/* Efeito de passar o mouse */
+.btn-custom:hover {
+    background-color: #B56247 !important;
+}
+
+/* novidades */
+.alert-custom {
+    background-color: #F0EAE1 !important;
+    border-left: 4px solid #D47A5D !important;
+    color: #1A1310 !important;
+}
+
